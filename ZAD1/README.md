@@ -1,0 +1,1 @@
+Autor: Arkadiusz Kluczek s24307
