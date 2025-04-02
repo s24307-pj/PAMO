@@ -1,11 +1,69 @@
 <resources>
     <string name="app_name">BMICalculator</string>
     <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+
+    <string name="bmi_calculator_title">KALKULATOR BMI</string>
+    <string name="weight_label">Waga (kg)</string>
+    <string name="height_label">Wzrost (cm)</string>
+    <string name="calculate_bmi">Oblicz BMI</string>
+    <string name="fill_all_fields">Wypełnij wszystkie pola!</string>
+    <string name="enter_valid_values">Wprowadź prawidłowe wartości!</string>
+    <string name="enter_valid_numeric_values">Wprowadź prawidłowe wartości liczbowe!</string>
+    <string name="bmi_result">Twoje BMI wynosi: %1$s</string>
+    <string name="bmi_underweight">Niedowaga</string>
+    <string name="bmi_normal">Optimum</string>
+    <string name="bmi_overweight">Nadwaga</string>
+    <string name="bmi_obese">Otyłość</string>
+
+    <string name="caloric_calculator_title">KALKULATOR KALORII</string>
+    <string name="age_label">Wiek</string>
+    <string name="gender_label">Płeć</string>
+    <string name="male">Mężczyzna</string>
+    <string name="female">Kobieta</string>
+    <string name="activity_level_label">Poziom aktywności</string>
+    <string name="activity_sedentary">Siedzący tryb życia</string>
+    <string name="activity_light">Lekka aktywność</string>
+    <string name="activity_moderate">Umiarkowana aktywność</string>
+    <string name="activity_active">Aktywny tryb życia</string>
+    <string name="activity_very_active">Bardzo aktywny tryb życia</string>
+    <string name="calculate_calories">Oblicz kalorie</string>
+    <string name="caloric_result">Twoje dzienne zapotrzebowanie: %1$s kcal</string>
+
+    <string name="recipe_recommendations_title">REKOMENDACJE KULINARNE</string>
+    <string name="low_calorie_diet">Dieta niskokaloryczna</string>
+    <string name="balanced_diet">Dieta zrównoważona</string>
+    <string name="high_protein_diet">Dieta wysokobiałkowa</string>
+    <string name="view_recipes">Zobacz przepisy</string>
+
+    <string name="welcome_title">Witaj w aplikacji Health &amp; Fitness</string>
+    <string name="welcome_subtitle">Twój osobisty asystent zdrowia</string>
+    <string name="get_started">Rozpocznij</string>
+    
+    <string name="nav_home">Start</string>
+    <string name="nav_bmi">BMI</string>
+    <string name="nav_calories">Kalorie</string>
+    <string name="nav_recipes">Przepisy</string>
+
+    <string name="recipe_1_title">Sałatka z kurczakiem i awokado</string>
+    <string name="recipe_1_calories">350 kcal</string>
+    <string name="recipe_1_description">Delikatna sałatka z grillowanym kurczakiem, awokado, pomidorami i sałatą, skropiona oliwą z oliwek i sokiem z cytryny.</string>
+    <string name="recipe_1_ingredients">• 200g kurczaka\n• 1 awokado\n• 2 pomidory\n• 1 sałata\n• 2 łyżki oliwy z oliwek\n• 1 cytryna\n• Sól i pieprz do smaku</string>
+    <string name="recipe_1_steps">1. Kurczaka pokrój w kostkę i dopraw solą i pieprzem.\n2. Rozgrzej patelnię i podsmaż kurczaka na oliwie.\n3. Awokado pokrój w kostkę.\n4. Pomidory pokrój na ćwiartki.\n5. Sałatę porwij na mniejsze kawałki.\n6. Wymieszaj wszystkie składniki w misce.\n7. Skrop sokiem z cytryny i dopraw do smaku.</string>
+    
+    <string name="recipe_2_title">Omlet z warzywami</string>
+    <string name="recipe_2_calories">280 kcal</string>
+    <string name="recipe_2_description">Puszysty omlet z papryką, szpinakiem, pomidorami i odrobiną sera feta.</string>
+    <string name="recipe_2_ingredients">• 3 jajka\n• 1/2 papryki\n• 1 garść szpinaku\n• 2 pomidory\n• 50g sera feta\n• Sól i pieprz do smaku</string>
+    <string name="recipe_2_steps">1. Jajka roztrzep w misce i dopraw solą i pieprzem.\n2. Paprykę pokrój w kostkę.\n3. Pomidory pokrój na ćwiartki.\n4. Rozgrzej patelnię i podsmaż paprykę.\n5. Dodaj szpinak i podsmaż chwilę.\n6. Wlej roztrzepane jajka.\n7. Posyp serem feta.\n8. Przykryj patelnię i poczekaj aż omlet się zetnie.</string>
+
+    <string name="ingredients_title">Składniki:</string>
+    <string name="steps_title">Sposób przygotowania:</string>
+    <string name="caloric_info">Twoje dzienne zapotrzebowanie kaloryczne: %1$d kcal</string>
+    <string name="calories_info_empty">Oblicz swoje zapotrzebowanie kaloryczne w kalkulatorze kalorii.</string>
 
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris

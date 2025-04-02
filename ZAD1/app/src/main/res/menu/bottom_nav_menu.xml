@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@android:drawable/ic_menu_compass"
+        android:title="@string/nav_home" />
+
+    <item
+        android:id="@+id/navigation_bmi"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
+        android:title="@string/nav_bmi" />
+
+    <item
+        android:id="@+id/navigation_calories"
+        android:icon="@android:drawable/ic_menu_view"
+        android:title="@string/nav_calories" />
+
+    <item
+        android:id="@+id/navigation_recipes"
+        android:icon="@android:drawable/ic_menu_slideshow"
+        android:title="@string/nav_recipes" />
+</menu> 

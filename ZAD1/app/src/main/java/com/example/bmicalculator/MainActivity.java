@@ -1,75 +1,67 @@
 package com.example.bmicalculator;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 
-    private EditText weightButton, heightButton;
-    private Button buttonSubmitBmi;
-    private TextView result, resultBMI;
+public class MainActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
+
+    private BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        weightButton = findViewById(R.id.weight);
-        heightButton = findViewById(R.id.height);
-        buttonSubmitBmi = findViewById(R.id.submitBmi);
-        result = findViewById(R.id.result);
-        resultBMI = findViewById(R.id.resultBMI);
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnItemSelectedListener(this);
 
-        buttonSubmitBmi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                calculateBMI();
-            }
-        });
+        if (savedInstanceState == null) {
+            loadFragment(new HomeFragment());
+        }
+    }
+    
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        Fragment fragment = null;
+
+        int itemId = item.getItemId();
+        if (itemId == R.id.navigation_home) {
+            fragment = new HomeFragment();
+        } else if (itemId == R.id.navigation_bmi) {
+            fragment = new BmiFragment();
+        } else if (itemId == R.id.navigation_calories) {
+            fragment = new CaloriesFragment();
+        } else if (itemId == R.id.navigation_recipes) {
+            fragment = new RecipesFragment();
+        }
+
+        return loadFragment(fragment);
+    }
+    
+    private boolean loadFragment(Fragment fragment) {
+        if (fragment != null) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, fragment)
+                    .commit();
+            return true;
+        }
+        return false;
     }
 
-    private void calculateBMI() {
-        String weightStr = weightButton.getText().toString();
-        String heightStr = heightButton.getText().toString();
-
-        if (weightStr.isEmpty() || heightStr.isEmpty()) {
-            Toast.makeText(this, "Wypełnij wszystkie pola!", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        try {
-            float weight = Float.parseFloat(weightStr);
-            float height = Float.parseFloat(heightStr) / 100;
-
-            if (weight <= 0 || height <= 0) {
-                Toast.makeText(this, "Wprowadź prawidłowe wartości!", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            float bmi = weight / (height * height);
-
-            result.setText("Twoje BMI wynosi: " + String.format("%.2f", bmi));
-
-            String status;
-            if (bmi < 18.5) {
-                status = "Niedowaga";
-            } else if (bmi < 25) {
-                status = "Optimum";
-            } else if (bmi < 30) {
-                status = "Nadwaga";
-            } else {
-                status = "Otyłość";
-            }
-
-            resultBMI.setText(status);
-
-        } catch (NumberFormatException e) {
-            Toast.makeText(this, "Wprowadź prawidłowe wartości liczbowe!", Toast.LENGTH_SHORT).show();
-        }
+    public void navigateToFragment(int fragmentId) {
+        bottomNavigationView.setSelectedItemId(fragmentId);
     }
 }
