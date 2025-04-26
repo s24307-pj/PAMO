@@ -18,7 +18,7 @@ public class CaloriesFragment extends Fragment {
 
     private EditText editTextWeight, editTextHeight, editTextAge;
     private Spinner spinnerActivityLevel;
-    private Button buttonCalculateCalories, buttonViewRecipes;
+    private Button buttonViewRecipes;
     private TextView textViewCaloriesResult;
     
     private double calculatedCalories = 0;
@@ -33,7 +33,7 @@ public class CaloriesFragment extends Fragment {
         editTextHeight = view.findViewById(R.id.editTextHeight);
         editTextAge = view.findViewById(R.id.editTextAge);
         spinnerActivityLevel = view.findViewById(R.id.spinnerActivityLevel);
-        buttonCalculateCalories = view.findViewById(R.id.buttonCalculateCalories);
+        Button buttonCalculateCalories = view.findViewById(R.id.buttonCalculateCalories);
         buttonViewRecipes = view.findViewById(R.id.buttonViewRecipes);
         textViewCaloriesResult = view.findViewById(R.id.textViewCaloriesResult);
 

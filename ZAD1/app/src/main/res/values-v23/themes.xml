@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
     <style name="Theme.BMICalculator" parent="Base.Theme.BMICalculator">
         <!-- Transparent system bars for edge-to-edge. -->

@@ -65,21 +65,16 @@ public class BmiFragment extends Fragment {
                 return;
             }
 
-            float bmi = weight / (height * height);
-            textViewBmiResult.setText(getString(R.string.bmi_result, String.format("%.2f", bmi)));
-
-            String status;
-            if (bmi < 18.5) {
-                status = getString(R.string.bmi_underweight);
-            } else if (bmi < 25) {
-                status = getString(R.string.bmi_normal);
-            } else if (bmi < 30) {
-                status = getString(R.string.bmi_overweight);
-            } else {
-                status = getString(R.string.bmi_obese);
+            try {
+                float bmi = BmiCalculator.calculateBmi(weight, height);
+                String category = BmiCalculator.getBmiCategory(bmi);
+                
+                textViewBmiResult.setText(getString(R.string.bmi_result, String.format("%.2f", bmi)));
+                textViewBmiStatus.setText(category);
+                
+            } catch (IllegalArgumentException e) {
+                Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
             }
-
-            textViewBmiStatus.setText(status);
 
         } catch (NumberFormatException e) {
             Toast.makeText(getContext(), getString(R.string.enter_valid_numeric_values), Toast.LENGTH_SHORT).show();

@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
 
 public class RecipeDetailsFragment extends Fragment {
     private static final String ARG_RECIPE_TITLE = "recipe_title";
