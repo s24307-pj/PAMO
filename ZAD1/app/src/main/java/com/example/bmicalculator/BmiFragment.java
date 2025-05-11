@@ -15,7 +15,9 @@ public class BmiFragment extends Fragment {
 
     private EditText editTextWeight, editTextHeight;
     private Button buttonCalculateBmi;
-    private TextView textViewBmiResult, textViewBmiStatus;
+    private Button buttonViewBmiChart;
+    private TextView textViewBmiResult;
+    private TextView textViewBmiStatus;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -24,12 +26,25 @@ public class BmiFragment extends Fragment {
         editTextWeight = view.findViewById(R.id.editTextWeight);
         editTextHeight = view.findViewById(R.id.editTextHeight);
         buttonCalculateBmi = view.findViewById(R.id.buttonCalculateBmi);
+        buttonViewBmiChart = view.findViewById(R.id.buttonViewBmiChart);
         textViewBmiResult = view.findViewById(R.id.textViewBmiResult);
         textViewBmiStatus = view.findViewById(R.id.textViewBmiStatus);
 
         buttonCalculateBmi.setOnClickListener(v -> calculateBMI());
+        
+        buttonViewBmiChart.setOnClickListener(v -> showBmiChart());
 
         return view;
+    }
+    
+    private void showBmiChart() {
+        BmiChartFragment bmiChartFragment = BmiChartFragment.newInstance();
+        
+        getParentFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, bmiChartFragment)
+                .addToBackStack(null)
+                .commit();
     }
 
     private void calculateBMI() {

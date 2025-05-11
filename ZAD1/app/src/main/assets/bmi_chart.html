@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wykres BMI</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+            background-color: #f8f9fa;
+        }
+        .chart-container {
+            position: relative;
+            height: 70vh;
+            width: 100%;
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Twoje BMI w czasie</h2>
+    <div class="chart-container">
+        <canvas id="bmiChart"></canvas>
+    </div>
+
+    <script>
+        const months = ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec'];
+        const bmiValues = [28.4, 27.2, 26.1, 25.0, 24.2, 23.5];
+
+        const ctx = document.getElementById('bmiChart').getContext('2d');
+        const bmiChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: months,
+                datasets: [{
+                    label: 'BMI',
+                    data: bmiValues,
+                    borderColor: '#3498db',
+                    backgroundColor: 'rgba(52, 152, 219, 0.2)',
+                    borderWidth: 2,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        min: 20,
+                        max: 30
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html> 

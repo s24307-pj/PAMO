@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
@@ -8,7 +9,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="32dp">
+        android:padding="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/textViewBmiTitle"
@@ -18,13 +22,19 @@
             android:text="@string/bmi_calculator_title"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textViewWeight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/weight_label" />
+            android:text="@string/weight_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewBmiTitle" />
 
         <EditText
             android:id="@+id/editTextWeight"
@@ -32,13 +42,19 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewWeight" />
 
         <TextView
             android:id="@+id/textViewHeight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/height_label" />
+            android:text="@string/height_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewWeight" />
 
         <EditText
             android:id="@+id/editTextHeight"
@@ -46,7 +62,10 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewHeight" />
 
         <Button
             android:id="@+id/buttonCalculateBmi"
@@ -54,7 +73,10 @@
             android:layout_height="wrap_content"
             android:text="@string/calculate_bmi"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextHeight" />
 
         <TextView
             android:id="@+id/textViewBmiResult"
@@ -62,7 +84,32 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textSize="18sp"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonCalculateBmi" />
+
+        <TextView
+            android:id="@+id/textViewBmiCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewBmiResult" />
+
+        <Button
+            android:id="@+id/buttonViewBmiChart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/view_bmi_chart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewBmiCategory" />
 
         <TextView
             android:id="@+id/textViewBmiStatus"
@@ -73,7 +120,10 @@
             android:textAllCaps="true"
             android:textSize="34sp"
             android:textStyle="bold|italic"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewBmiResult" />
 
     </LinearLayout>
 </ScrollView> 

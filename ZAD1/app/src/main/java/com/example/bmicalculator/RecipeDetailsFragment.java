@@ -4,8 +4,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -67,6 +69,7 @@ public class RecipeDetailsFragment extends Fragment {
         TextView descriptionView = view.findViewById(R.id.recipeDescription);
         TextView ingredientsView = view.findViewById(R.id.ingredientsList);
         TextView stepsView = view.findViewById(R.id.stepsList);
+        Button addToShoppingListButton = view.findViewById(R.id.buttonAddToShoppingList);
 
         imageView.setImageResource(recipeImage);
         titleView.setText(recipeTitle);
@@ -74,5 +77,20 @@ public class RecipeDetailsFragment extends Fragment {
         descriptionView.setText(recipeDescription);
         ingredientsView.setText(recipeIngredients);
         stepsView.setText(recipeSteps);
+        
+        addToShoppingListButton.setOnClickListener(v -> {
+            try {
+                ShoppingListFragment shoppingListFragment = ShoppingListFragment.getInstance();
+                
+                shoppingListFragment.addItemsFromRecipe(recipeTitle, recipeIngredients);
+                
+                Toast.makeText(requireContext(), R.string.item_added_to_shopping_list, Toast.LENGTH_SHORT).show();
+                
+                MainActivity activity = (MainActivity) requireActivity();
+                activity.navigateToFragment(R.id.navigation_shopping);
+            } catch (Exception e) {
+                Toast.makeText(requireContext(), "Wystąpił błąd: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 } 

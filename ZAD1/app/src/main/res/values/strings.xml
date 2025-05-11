@@ -18,6 +18,8 @@
     <string name="bmi_normal">Optimum</string>
     <string name="bmi_overweight">Nadwaga</string>
     <string name="bmi_obese">Otyłość</string>
+    <string name="bmi_chart_title">WYKRES BMI W CZASIE</string>
+    <string name="view_bmi_chart">Zobacz wykres BMI</string>
 
     <string name="caloric_calculator_title">KALKULATOR KALORII</string>
     <string name="age_label">Wiek</string>
@@ -47,6 +49,7 @@
     <string name="nav_bmi">BMI</string>
     <string name="nav_calories">Kalorie</string>
     <string name="nav_recipes">Przepisy</string>
+    <string name="nav_shopping">Zakupy</string>
 
     <string name="recipe_1_title">Sałatka z kurczakiem i awokado</string>
     <string name="recipe_1_calories">350 kcal</string>
@@ -64,6 +67,12 @@
     <string name="steps_title">Sposób przygotowania:</string>
     <string name="caloric_info">Twoje dzienne zapotrzebowanie kaloryczne: %1$d kcal</string>
     <string name="calories_info_empty">Oblicz swoje zapotrzebowanie kaloryczne w kalkulatorze kalorii.</string>
+    
+    <string name="shopping_list_title">LISTA ZAKUPÓW</string>
+    <string name="empty_shopping_list">Twoja lista zakupów jest pusta</string>
+    <string name="clear_completed">Usuń zakupione</string>
+    <string name="add_to_shopping_list">Dodaj do listy zakupów</string>
+    <string name="item_added_to_shopping_list">Dodano składniki do listy zakupów</string>
 
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
